@@ -13,6 +13,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Start from "../../components/Start/Start";
 import Customers from "../../components/Customers/Customers";
 import Details from "../../components/Details/Details";
+import EditProfile from "../../components/EditProfile/EditProfile";
 
 import styles from "./Dashboard.module.css";
 
@@ -152,8 +153,11 @@ const Dashboard = () => {
           <Route path="/dashboard/customers" exact>
             <Customers/>
           </Route>
-          <Route path="/dashboard/customers/details">
+          <Route path="/dashboard/customers/details" exact>
             <Details/>
+          </Route>
+          <Route path="/dashboard/customers/details/edit-profile">
+            <EditProfile/>
           </Route>
           <Route path="/dashboard/partners">
             <div>Partners</div>
