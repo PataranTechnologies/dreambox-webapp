@@ -14,6 +14,7 @@ import Start from "../../components/Start/Start";
 import Customers from "../../components/Customers/Customers";
 import Details from "../../components/Details/Details";
 import EditProfile from "../../components/EditProfile/EditProfile";
+import Balance from "../../components/Balance/Balance";
 
 import styles from "./Dashboard.module.css";
 
@@ -158,6 +159,9 @@ const Dashboard = () => {
           </Route>
           <Route path="/dashboard/customers/details/edit-profile">
             <EditProfile/>
+          </Route>
+          <Route path="/dashboard/customers/details/view-balance">
+            <Balance/>
           </Route>
           <Route path="/dashboard/partners">
             <div>Partners</div>

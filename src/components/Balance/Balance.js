@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Link, withRouter, useHistory } from "react-router-dom";
+import React, {useState} from "react";
+import { useHistory, Link, withRouter } from "react-router-dom";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 import user from "../../assets/user.svg";
 
-import styles from "./Details.module.css";
+import styles from "./Balance.module.css";
 
-const Details = ({ location }) => {
+const Balance = ({location}) => {
   const history = useHistory();
 
   const [userReports] = useState([
@@ -62,14 +62,17 @@ const Details = ({ location }) => {
   ]);
 
   return (
-    <div className={styles.detailsContainer}>
-      <nav className={styles.detailsNavigation}>
-        <span className={styles.sectionHeading} onClick={() => history.goBack()}>
+    <div className={styles.balanceContainer}>
+      <nav className={styles.balanceNavigation}>
+        <span
+          className={styles.sectionHeading}
+          onClick={() => history.goBack()}
+        >
           <ArrowBackIosIcon
             style={{ verticalAlign: "middle", color: "#000000" }}
             fontSize="default"
           />
-          Detalles
+          Balance
         </span>
       </nav>
       <div className={styles.userInfoContainer}>
@@ -84,31 +87,36 @@ const Details = ({ location }) => {
           </div>
           <div className={styles.otherDetails}>
             <div className={styles.dateArea}>
-              <span>Fecha Inscripcion:</span> <span>12/01/19</span>
+              <span>Periodo:</span>{" "}
+              <span className={styles.period}>
+                <span className={styles.date}>12/02/20</span>
+                <span>a</span>
+                <span className={styles.date}>12/03/20</span>
+              </span>
             </div>
-            <div className={styles.statusArea}> 
-              <div>Estatus:</div>
-              <div className={styles.statusButtons}>
-                <button>Activo</button>
-                <button>Inactivo</button> 
+            <div className={styles.balanceArea}>
+              <div>Balance:</div>
+              <div className={styles.balance}>
+                <h1>+ $3,4897</h1>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.moreInfoLinksContainer}>
-        <Link to={location.pathname + "/view-balance"} className={styles.moreInfoLink}>
-          Ver Balance
-        </Link>
-        <Link to={location.pathname + "/edit-profile"} className={styles.moreInfoLink}>
-          Editar Perfil
-        </Link>
-        <Link to="/" className={styles.moreInfoLink}>
-          Contactar Cliente
-        </Link>
-        <Link to="/" className={styles.moreInfoLink}>
-          Historial de Viajes
-        </Link>
+      <div className={styles.downloadReport}>
+        <button className={styles.downloadReportButton}>
+          Descargar Reporte
+        </button>
+      </div>
+      <div className={styles.tripsInfo}>
+          <div className={styles.latestTrips}>
+              <h2>Viajes en los Últimos 30 Días</h2>
+              <p>14</p>
+          </div>
+          <div className={styles.allTrips}>
+              <h2>Viajes Totales Ofrecidos</h2>
+              <p>150</p>
+          </div>
       </div>
       <div className={styles.userReportContainer}>
         <div className={styles.userReportHeader}>
@@ -181,4 +189,4 @@ const Details = ({ location }) => {
   );
 };
 
-export default withRouter(Details);
+export default withRouter(Balance);

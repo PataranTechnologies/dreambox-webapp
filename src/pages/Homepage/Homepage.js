@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import {useHistory } from "react-router-dom";
 
-import Modal from "../../UI/Modal/Modal";
+import SendEmailModal from "../../UI/Modal/SendEmailModal";
+import SentEmailModal from "../../UI/Modal/SentEmailModal";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
 import styles from "./Homepage.module.css";
@@ -14,6 +15,7 @@ const Homepage = () => {
   });
 
   const [forgotPassModal, setForgotPassModal] = useState(false);
+  const [emailSentModal, setEmailSentModal] = useState(false);
 
   const handleFormInput = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -28,11 +30,18 @@ const Homepage = () => {
       event.preventDefault();
       setForgotPassModal(true);
     };
-  
+
+    const handleEmailSend = () => {
+      setEmailSentModal(true);
+      setForgotPassModal(false);
+    }
+
   return (
     <div className={styles.homepageContainer}>
-      {forgotPassModal && <Modal cancel={() => setForgotPassModal(false)}/>}
+      {forgotPassModal && <SendEmailModal cancel={() => setForgotPassModal(false)} emailSent={handleEmailSend}/>}
       {forgotPassModal && <Backdrop/>}
+      {emailSentModal && <SentEmailModal cancel={()=> setEmailSentModal(false)}/>}
+      {emailSentModal && <Backdrop/>}
       <form className={styles.loginFormContainer}>
         <h2 className={styles.loginHeading}>
           ¡Bienvenido a Ride Administrador!
