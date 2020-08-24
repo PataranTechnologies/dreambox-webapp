@@ -1,0 +1,46 @@
+.modalContainer{
+    width: max-content;
+    background-color: #fff;
+    padding: 7.5rem 10rem 2rem 10rem;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 3px 5px 5px #cccccc;
+    z-index: 5;
+    border-radius: 3px;
+}
+
+.modalContainer h2{
+    font-size: 1.25rem;
+}
+
+.emailInput{
+    display: block;
+    width: 100%;
+    border: 1px solid #bbbbbb;
+    padding: .5rem;
+    margin-top: 1rem;
+    border-radius: 3px;
+}
+
+.sendButton{
+    display: block;
+    margin: 2rem auto;
+    padding: .5rem .75rem;
+    background-color: #3434d8;
+    color: #ffffff;
+    letter-spacing: .3px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all .4s ease;
+    border-radius: 3px;
+}
+
+.sendButton:hover{
+    background-color: #21219e;
+}
+
+
+
