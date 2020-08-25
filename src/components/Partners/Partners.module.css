@@ -1,0 +1,161 @@
+.partnersContainer{
+    width: 100%;
+}
+
+.partnersHeader{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.partnerAdminHeading{
+    font-size: 1.2rem;
+    letter-spacing: .3px;
+    line-height: 3rem;
+}
+
+.clientForm .input{
+    padding: .35rem 2rem .35rem .5rem;
+    border-radius: 2px;
+    border: 1px solid #afafaf;
+}
+
+.adminInfoContainer{
+    width: 95%;
+    margin: 2rem auto 0 auto;
+}
+
+.adminInfoHeader{
+    width: 100%;
+    padding: .5rem 0;
+    text-align: center;
+    background-color: #770404;
+    border-radius: 3px;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: .4px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 2fr 3fr 2fr 2fr;
+    grid-template-areas: "idH nameH telephoneH mailH lastTripH statusH actionsH";
+    column-gap: .5rem;
+}
+
+.adminInfoHeader div{
+    font-size: 1.15rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.idHeader{
+    grid-area: idH;
+}
+
+
+.nameHeader{
+    grid-area: nameH;
+}
+
+.telephoneHeader{
+    grid-area: telephoneH;
+}
+
+.mailHeader{
+    grid-area: mailH;
+}
+
+.lastTripHeader{
+    grid-area: lastTripH;
+}
+
+.statusHeader{
+    grid-area: statusH;
+}
+
+.actionsHeader{
+    grid-area: actionsH;
+}
+
+.adminInfoBody{
+    width: 100%;
+    border: 1px solid #bbbbbb;
+    border-top: 0;
+    border-radius: 3px;
+    height: 32rem;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.adminInfo{
+    width: 100%;
+    height: calc(100% / 3);
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 2fr 3fr 2fr 3fr 2fr 2fr;
+    grid-template-areas: "id name telephone mail lastTrip status actions";
+    column-gap: .5rem;
+    row-gap: 2rem;
+    font-size: .925rem;
+    font-weight: 500;
+    letter-spacing: .2px;
+    border-bottom: 1.25px solid #a1a1a1;
+}
+
+.idBody{
+    grid-area: id;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+
+.nameBody{
+    grid-area: name;
+}
+
+.telephoneBody{
+    grid-area: telephone;
+}
+
+.mailBody{
+    grid-area: mail;
+}
+
+.lastTripBody{
+    grid-area: lastTrip;
+}
+
+.statusBody{
+    grid-area: status;
+}
+
+.actionsBody{
+    grid-area: actions;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.actionLink{
+    display: block;
+    font-size: .85rem;
+    width: 80%;
+    margin: auto;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    padding: 0 .5rem;
+    background-color: #3434d8;
+    box-shadow: 0 1px 2px 2px #cccccc;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: .25px;
+    border-radius: 3px;
+    transition: all .4s ease;
+}
+
+.actionLink:hover{
+    background-color: #21219e;
+}

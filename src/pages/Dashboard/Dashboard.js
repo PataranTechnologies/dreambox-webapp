@@ -12,9 +12,19 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 import Start from "../../components/Start/Start";
 import Customers from "../../components/Customers/Customers";
-import Details from "../../components/Details/Details";
+import CustomerDetails from "../../components/CustomerDetails/CustomerDetails";
 import EditProfile from "../../components/EditProfile/EditProfile";
 import Balance from "../../components/Balance/Balance";
+import PartnerBalance from "../../components/PartnerBalance/PartnerBalance";
+import TravelHistory from "../../components/TravelHistory/TravelHistory";
+import DetailedTravelHistory from "../../components/DetailedTravelHistory/DetailedTravelHistory";
+import Partners from "../../components/Partners/Partners";
+import PartnerDetails from "../../components/PartnerDetails/PartnerDetails";
+import VehicleInfo from "../../components/VehicleInfo/VehicleInfo";
+import BankAccount from "../../components/BankAccount/BankAccount";
+import PartnerTravelHistory from "../../components/PartnerTravelHistory/PartnerTravelHistory";
+import PartnerDetailedTravelHistory from "../../components/PartnerDetailedTravelHistory/PartnerDetailedTravelHistory";
+
 
 import styles from "./Dashboard.module.css";
 
@@ -149,22 +159,49 @@ const Dashboard = () => {
       <div className={styles.mainContainer}>
         <Switch>
           <Route path="/dashboard" exact>
-            <Start/>
+            <Start />
           </Route>
           <Route path="/dashboard/customers" exact>
-            <Customers/>
+            <Customers />
           </Route>
           <Route path="/dashboard/customers/details" exact>
-            <Details/>
+            <CustomerDetails />
           </Route>
           <Route path="/dashboard/customers/details/edit-profile">
-            <EditProfile/>
+            <EditProfile />
           </Route>
           <Route path="/dashboard/customers/details/view-balance">
-            <Balance/>
+            <Balance />
           </Route>
-          <Route path="/dashboard/partners">
-            <div>Partners</div>
+          <Route path="/dashboard/customers/details/travel-history" exact>
+            <TravelHistory />
+          </Route>
+          <Route path="/dashboard/customers/details/travel-history/:id">
+            <DetailedTravelHistory />
+          </Route>
+          <Route path="/dashboard/partners" exact>
+            <Partners />
+          </Route>
+          <Route path="/dashboard/partners/details" exact>
+            <PartnerDetails />
+          </Route>
+          <Route path="/dashboard/partners/details/vehicle-info">
+            <VehicleInfo />
+          </Route>
+          <Route path="/dashboard/partners/details/bank-account">
+            <BankAccount />
+          </Route>
+          <Route path="/dashboard/partners/details/view-balance">
+            <PartnerBalance />
+          </Route>
+          <Route path="/dashboard/partners/details/edit-profile">
+            <EditProfile />
+          </Route>
+          <Route path="/dashboard/partners/details/travel-history" exact>
+            <PartnerTravelHistory />
+          </Route>
+          <Route path="/dashboard/partners/details/travel-history/:id">
+            <PartnerDetailedTravelHistory />
           </Route>
           <Route path="/dashboard/travel-history">
             <div>Travel History</div>

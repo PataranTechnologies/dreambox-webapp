@@ -3,18 +3,18 @@ import {withRouter} from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
-import styles from "./Customers.module.css";
+import styles from "./Partners.module.css";
 import { Link } from "react-router-dom";
 
-const Customers = ({location}) => {
+const Partners = ({location}) => {
   const [clientInput, setClientInput] = useState("");
 
-  const [adminInfo] = useState([
+  const [partnersInfo] = useState([
     {
       id: 1,
-      name: "Mosby Ted",
+      name: "Pitt Brad",
       telephone: "+506 324 345 4567",
-      mail: "ted@gmail.com",
+      registration: "AF10-V23",
       lastTrip: {
         date: "06/07/20",
         time: "15:04:30",
@@ -28,9 +28,9 @@ const Customers = ({location}) => {
     },
     {
       id: 2,
-      name: "Harper Charilie",
+      name: "Geller Ross",
       telephone: "+506 324 345 4567",
-      mail: "ch1@gmail.com",
+      registration: "AJ90-F32",
       lastTrip: {
         date: "05/07/20",
         time: "11:04:30",
@@ -42,6 +42,22 @@ const Customers = ({location}) => {
         { text: "Editar", url: "/edit" },
       ],
     },
+    {
+        id: 3,
+        name: "Perry Mathew",
+        telephone: "+506 324 345 4567",
+        registration: "FG78-E21",
+        lastTrip: {
+          date: "05/07/20",
+          time: "11:04:30",
+        },
+        status: "Pendiente",
+        actions: [
+          { text: "Detalles", url: "/details" },
+          { text: "Validar", url: "/validate" },
+          { text: "Editar", url: "/edit" },
+        ],
+      },
   ]);
 
   const handleClientSearchInput = (event) => {
@@ -53,10 +69,10 @@ const Customers = ({location}) => {
   };
 
   return (
-    <div className={styles.customersContainer}>
-      <div className={styles.customersHeader}>
-        <div className={styles.customerAdminHeading}>
-          Administración de Clientes
+    <div className={styles.partnersContainer}>
+      <div className={styles.partnersHeader}>
+        <div className={styles.partnerAdminHeading}>
+        Administración de Socios
         </div>
         <form onSubmit={handleClientSearchSubmit} className={styles.clientForm}>
           <SearchIcon
@@ -94,7 +110,7 @@ const Customers = ({location}) => {
             />
           </div>
           <div className={styles.mailHeader}>
-            Correo
+          Matrícula
             <KeyboardArrowDownIcon
               style={{ verticalAlign: "middle", marginLeft: ".25rem" }}
             />
@@ -114,13 +130,13 @@ const Customers = ({location}) => {
           <div className={styles.actionsHeader}>Acciones</div>
         </div>
         <div className={styles.adminInfoBody}>
-          {adminInfo.map((info) => {
+          {partnersInfo.map((info) => {
             return (
               <div className={styles.adminInfo} key={info.id}>
                 <div className={styles.idBody}>{info.id}</div>
                 <div className={styles.nameBody}>{info.name}</div>
                 <div className={styles.telephoneBody}>{info.telephone}</div>
-                <div className={styles.mailBody}>{info.mail}</div>
+                <div className={styles.mailBody}>{info.registration}</div>
                 <div className={styles.lastTripBody}>
                   {info.lastTrip.date} - {info.lastTrip.time}
                 </div>
@@ -147,4 +163,4 @@ const Customers = ({location}) => {
   );
 };
 
-export default withRouter(Customers);
+export default withRouter(Partners);

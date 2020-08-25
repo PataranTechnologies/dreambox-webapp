@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { Link, withRouter, useHistory } from "react-router-dom";
+import React, {useState} from "react";
+import { useHistory, Link, withRouter } from "react-router-dom";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 import user from "../../assets/user.svg";
 
-import styles from "./Details.module.css";
+import styles from "./TravelHistory.module.css";
 
-const Details = ({ location }) => {
+const TravelHistory = ({location}) => {
   const history = useHistory();
 
-  const [userReports] = useState([
+  const [travelHistories] = useState([
     {
       id: 1,
       date: "06/07/20",
@@ -20,56 +20,35 @@ const Details = ({ location }) => {
       status: "Finalizado",
       actions: {
         text: "Detalles",
-        url: "/",
+        url: location.pathname,
       },
     },
     {
-      id: 2,
-      date: "03/07/20",
-      hour: "09:30:24",
-      conductor: "Specter Harvey",
-      passenger: "Mosby Ted",
-      status: "Cancelado Cliente",
-      actions: {
-        text: "Detalles",
-        url: "/",
+        id: 2,
+        date: "03/07/20",
+        hour: "09:30:24",
+        conductor: "Pitt Brad",
+        passenger: "Mosby Ted",
+        status: "Finalizado",
+        actions: {
+          text: "Detalles",
+          url: location.pathname,
+        },
       },
-    },
-    {
-      id: 3,
-      date: "03/07/20",
-      hour: "08:20:12",
-      conductor: "Aldrin Lily",
-      passenger: "Mosby Ted",
-      status: "Cancelado Socio",
-      actions: {
-        text: "Detalles",
-        url: "/",
-      },
-    },
-    {
-      id: 4,
-      date: "06/07/20",
-      hour: "07:00:24",
-      conductor: "Wayne Bruce",
-      passenger: "Mosby Ted",
-      status: "Anulado",
-      actions: {
-        text: "Detalles",
-        url: "/",
-      },
-    },
   ]);
 
   return (
-    <div className={styles.detailsContainer}>
-      <nav className={styles.detailsNavigation}>
-        <span className={styles.sectionHeading} onClick={() => history.goBack()}>
+    <div className={styles.travelHistoryContainer}>
+      <nav className={styles.travelHistoryNavigation}>
+        <span
+          className={styles.sectionHeading}
+          onClick={() => history.goBack()}
+        >
           <ArrowBackIosIcon
             style={{ verticalAlign: "middle", color: "#000000" }}
             fontSize="default"
           />
-          Detalles
+          Historial de Viajes
         </span>
       </nav>
       <div className={styles.userInfoContainer}>
@@ -84,34 +63,23 @@ const Details = ({ location }) => {
           </div>
           <div className={styles.otherDetails}>
             <div className={styles.dateArea}>
-              <span>Fecha Inscripcion:</span> <span>12/01/19</span>
+              <span>Periodo:</span>{" "}
+              <span className={styles.period}>
+                <span className={styles.date}>12/02/20</span>
+                <span>a</span>
+                <span className={styles.date}>12/03/20</span>
+              </span>
             </div>
-            <div className={styles.statusArea}> 
-              <div>Estatus:</div>
-              <div className={styles.statusButtons}>
-                <button>Activo</button>
-                <button>Inactivo</button> 
-              </div>
+            <div className={styles.downloadReport}>
+              <button className={styles.downloadReportButton}>
+                Descargar Reporte
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.moreInfoLinksContainer}>
-        <Link to={location.pathname + "/view-balance"} className={styles.moreInfoLink}>
-          Ver Balance
-        </Link>
-        <Link to={location.pathname + "/edit-profile"} className={styles.moreInfoLink}>
-          Editar Perfil
-        </Link>
-        <Link to="/" className={styles.moreInfoLink}>
-          Contactar Cliente
-        </Link>
-        <Link to="/" className={styles.moreInfoLink}>
-          Historial de Viajes
-        </Link>
-      </div>
-      <div className={styles.userReportContainer}>
-        <div className={styles.userReportHeader}>
+      <div className={styles.travelHistoryContainer}>
+        <div className={styles.travelHistoryHeader}>
           <div className={styles.idHeader}>
             ID
             <KeyboardArrowDownIcon
@@ -150,26 +118,26 @@ const Details = ({ location }) => {
           </div>
           <div className={styles.actionsHeader}>Acciones</div>
         </div>
-        <div className={styles.userReportBody}>
-          {userReports.map((userReport) => {
+        <div className={styles.travelHistoryBody}>
+          {travelHistories.map((travelHistory) => {
             return (
-              <div className={styles.userReport} key={userReport.id}>
-                <div className={styles.idBody}>{userReport.id}</div>
-                <div className={styles.dateBody}>{userReport.date}</div>
-                <div className={styles.hourBody}>{userReport.hour}</div>
+              <div className={styles.travelHistory} key={travelHistory.id}>
+                <div className={styles.idBody}>{travelHistory.id}</div>
+                <div className={styles.dateBody}>{travelHistory.date}</div>
+                <div className={styles.hourBody}>{travelHistory.hour}</div>
                 <div className={styles.conductorBody}>
-                  {userReport.conductor}
+                  {travelHistory.conductor}
                 </div>
                 <div className={styles.passengerBody}>
-                  {userReport.passenger}
+                  {travelHistory.passenger}
                 </div>
-                <div className={styles.statusBody}>{userReport.status}</div>
+                <div className={styles.statusBody}>{travelHistory.status}</div>
                 <div className={styles.actionsBody}>
                   <Link
-                    to={location.pathname + userReport.actions.url}
+                    to={travelHistory.actions.url + "/" + travelHistory.id}
                     className={styles.actionLink}
                   >
-                    {userReport.actions.text}
+                    {travelHistory.actions.text}
                   </Link>
                 </div>
               </div>
@@ -181,4 +149,4 @@ const Details = ({ location }) => {
   );
 };
 
-export default withRouter(Details);
+export default withRouter(TravelHistory);

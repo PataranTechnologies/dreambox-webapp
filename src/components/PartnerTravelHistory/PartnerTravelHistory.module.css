@@ -1,8 +1,8 @@
-.balanceContainer{
+.partnerTravelHistoryContainer{
     width: 100%;
 }
 
-.balanceNavigation{
+.partnerTravelHistoryNavigation{
     width: 95%;
     margin: .5rem auto;
 }
@@ -43,8 +43,8 @@
     flex: 1;
     height: max-content;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin-left: 2rem;
 }
 
@@ -63,12 +63,17 @@
     justify-content: center;
 }
 
-.dateArea, .balanceArea{
+.dateArea, .downloadReport{
     font-size: 1.25rem;
     font-weight: 500;
     line-height: 1.75rem;
     letter-spacing: .5px;
-    margin: 1rem 0;
+    margin: .75rem 0;
+}
+
+.downloadReport{
+    align-self: flex-end;
+    margin-right: .5rem;
 }
 
 .period{
@@ -88,69 +93,34 @@
     color: #00000090;
 }
 
-.balanceArea{
+/* .balanceArea{
     display: flex;
     align-items: center;
-}
+} */
 
-.balance{
-    margin-left: 1rem;
-    font-size: 1.75rem;
-    font-weight: 700;
-    letter-spacing: .7px;
-    color: #2a852a;
-}
-
-.downloadReport{
+/* .downloadReport{
     width: 90%;
     margin: 0 auto;
     display: flex;
     flex-direction: row-reverse;
     border-bottom: 1px solid #cccccc;
-}
+} */
 
 .downloadReportButton{
     padding: .5rem 1rem;
     border: 1px solid #bbbbbb;
     box-shadow: 0 1px 3px 3px #cccccc;
-    margin: 1rem .75rem;
+    margin: 1rem 0;
     font-weight: 500;
     letter-spacing: .4px;
 }
 
-.tripsInfo{
-    width: 95%;
-    margin: 1rem auto 0 auto;
-    background-color: #e9f1f8;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1.5rem 0;
-}
-
-.latestTrips h2, .allTrips h2{
-    font-size: 1.75rem;
-    letter-spacing: .5px;
-    line-height: 1.75rem;
-    margin-bottom: .5rem;
-    text-align: center;
-    font-weight: 500;
-}
-
-.latestTrips p, .allTrips p{
-    font-size: 2.25rem;
-    line-height: 2.35rem;
-    letter-spacing: .5px;
-    text-align: center;
-    font-weight: 700;
-}
-
-.userReportContainer{
+.travelHistoryContainer{
     width: 95%;
     margin: 1rem auto;
 }
 
-.userReportHeader{
+.travelHistoryHeader{
     width: 100%;
     padding: .5rem 0;
     text-align: center;
@@ -165,7 +135,7 @@
     column-gap: .5rem;
 }
 
-.userReportHeader div{
+.travelHistoryHeader div{
     cursor: pointer;
     text-align: center;
 }
@@ -198,19 +168,19 @@
     grid-area: actionsH;
 }
 
-.userReportBody{
+.travelHistoryBody{
     width: 100%;
     border: 1px solid #bbbbbb;
     border-top: 0;
     border-radius: 3px;
-    height: 12.5rem;
+    height: 20rem;
     overflow-y: scroll;
     text-align: center;
 }
 
-.userReport{
+.travelHistory{
     width: 100%;
-    height: calc(100% / 3.25);
+    height: calc(100% / 5);
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 2fr 2fr 3fr 3fr 3fr 2fr;
