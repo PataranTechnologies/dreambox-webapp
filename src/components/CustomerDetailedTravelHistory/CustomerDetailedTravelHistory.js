@@ -1,21 +1,20 @@
 import React, { useState } from "react";
-import { useHistory, withRouter, useParams } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 import user from "../../assets/user.svg";
 
-import styles from "./DetailedTravelHistory.module.css";
+import styles from "./CustomerDetailedTravelHistory.module.css";
 
-const DetailedTravelHistory = ({ location }) => {
+const CustomerDetailedTravelHistory = ({ location }) => {
   const history = useHistory();
-  const { id } = useParams();
 
   const [details] = useState({
     date: "12/02/20",
     startingPoint: "Calle 123, Col. Avispa",
     time: "15:40:12",
     stops: "Calle 321, Col. Tigre",
-    conductor: "Pitt Brad",
+    conductor: "Specter Harvey",
     destination: "Calle 456, Col. León",
     passenger: "Mosby Ted",
     paymentMethod: "Tarjeta Débito Terminación 3429",
@@ -47,15 +46,15 @@ const DetailedTravelHistory = ({ location }) => {
         </div>
         <div className={styles.userInfo}>
           <div className={styles.userDetails}>
-            <p>Pitt Brad</p>
+            <p>Mosby Ted</p>
             <p>+506 324 345 </p>
-            <p>pittbrad@gmail.com</p>
+            <p>tedmosby@gmail.com</p>
           </div>
           <div className={styles.otherDetails}>
             <div className={styles.dateArea}>
               <span>Viaje:</span>{" "}
               <span className={styles.period}>
-                <span className={styles.date}>ID {id} - 12/02/20</span>
+                <span className={styles.date}>12/02/20</span>
               </span>
             </div>
             <div className={styles.downloadReport}>
@@ -120,7 +119,7 @@ const DetailedTravelHistory = ({ location }) => {
           <div className={styles.entry}>
             <div>Mapa de Recorrido:</div>
             <div id={styles.map}>
-              <div>Recorrido</div>
+                <div>Recorrido</div>
             </div>
           </div>
           <div className={styles.entry}></div>
@@ -131,11 +130,10 @@ const DetailedTravelHistory = ({ location }) => {
         </div>
         <div className={styles.actionSection}>
           <button className={styles.cancelTrip}>Anular Viaje</button>
-          <button className={styles.endTrip}>Finalizar Viaje</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default withRouter(DetailedTravelHistory);
+export default withRouter(CustomerDetailedTravelHistory);

@@ -1,0 +1,148 @@
+.userContainer {
+    width: 100%;
+}
+
+.userNavigation {
+    width: 95%;
+    margin: .5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sectionHeading {
+    font-size: 1.3rem;
+    color: #3434d8;
+    letter-spacing: .4px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.statusArea {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    letter-spacing: .5px;
+    margin: .75rem 0;
+}
+
+.statusArea {
+    display: flex;
+    align-items: center;
+}
+
+.statusButtons {
+    margin-left: 3rem;
+}
+
+.statusButtons button {
+    padding: .5rem .75rem;
+    background-color: #ffffff;
+    border: 1.25px solid #3434d8;
+    color: #3434d8;
+    font-size: .95rem;
+    letter-spacing: .25px;
+    font-weight: 500;
+}
+
+.statusButtons button:first-child {
+    border-right: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #3434d8;
+    color: #ffffff;
+}
+
+.statusButtons button:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.userSection {
+    width: 95%;
+    margin: .5rem auto 0 auto;
+}
+
+.userArea {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userInfo {
+    width: 50%;
+}
+
+.userImage {
+    width: 8rem;
+    height: 8rem;
+    display: grid;
+    place-items: center;
+    position: relative;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: 11.5rem;
+}
+
+.userImage img {
+    width: 6rem;
+    height: 6rem;
+    padding: .5rem;
+    border-radius: 50%;
+    border: 7px solid #000000;
+    vertical-align: middle;
+}
+
+.permissions {
+    width: 50%;
+}
+
+.permissions h2 {
+    text-align: center;
+    margin: 6rem 0 2rem 0;
+}
+
+.set {
+    margin: 2rem 0;
+}
+
+.set h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: .75rem;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.option {
+    width: calc(50% - 1rem);
+    margin: .5rem;
+}
+
+.option label {
+    margin-left: .5rem;
+}
+
+.textGroup {
+    width: 100%;
+    display: flex;
+    margin: 1.25rem 0;
+    align-items: center;
+}
+
+.textGroup h2 {
+    width: 30%;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.textGroup p,
+.textGroup select {
+    width: 60%;
+    font-size: 1.05rem;
+    padding: .5rem 0;
+}

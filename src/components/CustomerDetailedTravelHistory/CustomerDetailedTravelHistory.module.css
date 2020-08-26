@@ -161,10 +161,9 @@
     flex-direction: row-reverse;
 }
 
-.cancelTrip, .endTrip{
+.cancelTrip{
     padding: .5rem 1rem;
     margin: 0 .5rem;
-    margin-left: 1rem;
     border-radius: 3px;
     background-color: #3434d8;
     color: #fff;

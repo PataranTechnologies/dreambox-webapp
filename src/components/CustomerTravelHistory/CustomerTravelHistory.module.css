@@ -16,19 +16,44 @@
 }
 
 .userInfoContainer{
-    width: 90%;
+    width: 95%;
     height: max-content;
     padding: 1rem 0 0 0;
     margin: 2rem auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.userImage{
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    border: 7px solid #000000;
+    padding: .5rem;
+}
+
+.userImage img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
 
 .userInfo{
-    width: 100%;
+    flex: 1;
     height: max-content;
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
+    margin-left: 2rem;
+}
+
+.userDetails p{
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    letter-spacing: .5px;
+    margin: .5rem 0;
 }
 
 .otherDetails{
@@ -67,6 +92,19 @@
     font-size: .95rem;
     color: #00000090;
 }
+
+/* .balanceArea{
+    display: flex;
+    align-items: center;
+} */
+
+/* .downloadReport{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: 1px solid #cccccc;
+} */
 
 .downloadReportButton{
     padding: .5rem 1rem;

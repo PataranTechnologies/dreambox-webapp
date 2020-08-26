@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from "./Backdrop.module.css";
 
-const Backdrop = () => {
+const Backdrop = ({onCancel}) => {
     return (
-        <div className={styles.backdropContainer}>
+        <div className={styles.backdropContainer} onClick={onCancel}>
             <h2>¡Bienvenido a Ride Administrador!</h2>
         </div>
     );

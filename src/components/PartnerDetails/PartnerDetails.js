@@ -109,7 +109,7 @@ const PartnerDetails = ({ location }) => {
         <Link to={location.pathname + "/travel-history"} className={styles.moreInfoLink}>
           Historial de Viajes
         </Link>
-        <Link to={location.pathname + "/"} className={styles.moreInfoLink}>
+        <Link to={location.pathname + "/documentation"} className={styles.moreInfoLink}>
         Documentación
         </Link>
       </div>

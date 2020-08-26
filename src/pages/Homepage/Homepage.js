@@ -39,9 +39,9 @@ const Homepage = () => {
   return (
     <div className={styles.homepageContainer}>
       {forgotPassModal && <SendEmailModal cancel={() => setForgotPassModal(false)} emailSent={handleEmailSend}/>}
-      {forgotPassModal && <Backdrop/>}
+      {forgotPassModal && <Backdrop onCancel={() => setForgotPassModal(false)}/>}
       {emailSentModal && <SentEmailModal cancel={()=> setEmailSentModal(false)}/>}
-      {emailSentModal && <Backdrop/>}
+      {emailSentModal && <Backdrop onCancel={() => setEmailSentModal(false)}/>}
       <form className={styles.loginFormContainer}>
         <h2 className={styles.loginHeading}>
           ¡Bienvenido a Ride Administrador!

@@ -18,6 +18,22 @@
     color: #3434d8;
 }
 
+.otherSection{
+    width: max-content;
+    display: flex;
+    align-items: center;
+}
+
+.addUser{
+    display: block;
+    margin-right: 1.5rem;
+    padding: .5rem 1rem;
+    background-color: #770404;
+    color: #ffffff;
+    border-radius: 5px;
+    letter-spacing: .5px;
+}
+
 .clientForm .input{
     padding: .35rem 2rem .35rem .5rem;
     border-radius: 2px;
@@ -39,8 +55,8 @@
     font-weight: 700;
     letter-spacing: .4px;
     display: grid;
-    grid-template-columns: 1fr 2fr 3fr 2fr 3fr 2fr 2fr;
-    grid-template-areas: "idH nameH telephoneH mailH lastTripH statusH actionsH";
+    grid-template-columns: 1fr 2fr 2fr 2fr 3fr 2fr 2fr;
+    grid-template-areas: "idH nameH mailH statusH lastConnectionH roleH actionsH";
     column-gap: .5rem;
 }
 
@@ -59,16 +75,16 @@
     grid-area: nameH;
 }
 
-.telephoneHeader{
-    grid-area: telephoneH;
+.roleHeader{
+    grid-area: roleH;
 }
 
 .mailHeader{
     grid-area: mailH;
 }
 
-.lastTripHeader{
-    grid-area: lastTripH;
+.lastConnectionHeader{
+    grid-area: lastConnectionH;
 }
 
 .statusHeader{
@@ -94,8 +110,8 @@
     height: calc(100% / 3);
     display: grid;
     place-items: center;
-    grid-template-columns: 1fr 2fr 3fr 2fr 3fr 2fr 2fr;
-    grid-template-areas: "id name telephone mail lastTrip status actions";
+    grid-template-columns: 1fr 2fr 2fr 2fr 3fr 2fr 2fr;
+    grid-template-areas: "id name mail status lastConnection role actions";
     column-gap: .5rem;
     row-gap: 2rem;
     font-size: .925rem;
@@ -115,16 +131,16 @@
     grid-area: name;
 }
 
-.telephoneBody{
-    grid-area: telephone;
+.roleBody{
+    grid-area: role;
 }
 
 .mailBody{
     grid-area: mail;
 }
 
-.lastTripBody{
-    grid-area: lastTrip;
+.lastConnectionBody{
+    grid-area: lastConnection;
 }
 
 .statusBody{

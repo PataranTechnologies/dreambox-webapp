@@ -16,14 +16,24 @@ import CustomerDetails from "../../components/CustomerDetails/CustomerDetails";
 import EditProfile from "../../components/EditProfile/EditProfile";
 import Balance from "../../components/Balance/Balance";
 import PartnerBalance from "../../components/PartnerBalance/PartnerBalance";
-import TravelHistory from "../../components/TravelHistory/TravelHistory";
-import DetailedTravelHistory from "../../components/DetailedTravelHistory/DetailedTravelHistory";
+import CustomerTravelHistory from "../../components/CustomerTravelHistory/CustomerTravelHistory";
+import CustomerDetailedTravelHistory from "../../components/CustomerDetailedTravelHistory/CustomerDetailedTravelHistory";
 import Partners from "../../components/Partners/Partners";
 import PartnerDetails from "../../components/PartnerDetails/PartnerDetails";
 import VehicleInfo from "../../components/VehicleInfo/VehicleInfo";
 import BankAccount from "../../components/BankAccount/BankAccount";
+import Documentation from "../../components/Documentation/Documentation";
+import TravelHistory from "../../components/TravelHistory/TravelHistory";
+import DetailedTravelHistory from "../../components/DetailedTravelHistory/DetailedTravelHistory";
 import PartnerTravelHistory from "../../components/PartnerTravelHistory/PartnerTravelHistory";
 import PartnerDetailedTravelHistory from "../../components/PartnerDetailedTravelHistory/PartnerDetailedTravelHistory";
+import Communication from "../../components/Communication/Communication";
+import BankingSystem from "../../components/BankingSystem/BankingSystem";
+import DetailedBankSystem from "../../components/DetailedBankSystem/DetailedBankSystem";
+import SystemUsers from "../../components/SystemUsers/SystemUsers";
+import SystemUsersDetails from "../../components/SystemUsersDetails/SystemUsersDetails";
+import AddSystemUsers from "../../components/AddSystemUsers/AddSystemUsers";
+import EditSystemUsers from "../../components/EditSystemUsers/EditSystemUsers";
 
 
 import styles from "./Dashboard.module.css";
@@ -174,10 +184,10 @@ const Dashboard = () => {
             <Balance />
           </Route>
           <Route path="/dashboard/customers/details/travel-history" exact>
-            <TravelHistory />
+            <CustomerTravelHistory />
           </Route>
           <Route path="/dashboard/customers/details/travel-history/:id">
-            <DetailedTravelHistory />
+            <CustomerDetailedTravelHistory />
           </Route>
           <Route path="/dashboard/partners" exact>
             <Partners />
@@ -197,26 +207,44 @@ const Dashboard = () => {
           <Route path="/dashboard/partners/details/edit-profile">
             <EditProfile />
           </Route>
+          <Route path="/dashboard/partners/details/documentation">
+            <Documentation />
+          </Route>
           <Route path="/dashboard/partners/details/travel-history" exact>
             <PartnerTravelHistory />
           </Route>
           <Route path="/dashboard/partners/details/travel-history/:id">
             <PartnerDetailedTravelHistory />
           </Route>
-          <Route path="/dashboard/travel-history">
-            <div>Travel History</div>
+          <Route path="/dashboard/travel-history" exact>
+            <TravelHistory/>
+          </Route>
+          <Route path="/dashboard/travel-history/details/:id">
+            <DetailedTravelHistory/>
           </Route>
           <Route path="/dashboard/communication">
-            <div>Communication</div>
+            <Communication/>
           </Route>
-          <Route path="/dashboard/banking-system">
-            <div>Banking System</div>
+          <Route path="/dashboard/banking-system" exact>
+            <BankingSystem/>
           </Route>
-          <Route path="/dashboard/system-users">
-            <div>System Users</div>
+          <Route path="/dashboard/banking-system/bank-details">
+            <DetailedBankSystem/>
+          </Route>
+          <Route path="/dashboard/system-users" exact>
+            <SystemUsers/>
+          </Route>
+          <Route path="/dashboard/system-users/details">
+            <SystemUsersDetails/>
+          </Route>
+          <Route path="/dashboard/system-users/add">
+            <AddSystemUsers/>
+          </Route>
+          <Route path="/dashboard/system-users/edit">
+            <EditSystemUsers/>
           </Route>
           <Route path="/dashboard/sign-off">
-            <div>Sign Off</div>
+            <Redirect to="/"/>
           </Route>
           <Redirect to="/dashboard" />
         </Switch>

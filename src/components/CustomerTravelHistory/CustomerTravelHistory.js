@@ -1,10 +1,13 @@
 import React, {useState} from "react";
 import { useHistory, Link, withRouter } from "react-router-dom";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
-import styles from "./TravelHistory.module.css";
+import user from "../../assets/user.svg";
 
-const TravelHistory = ({location}) => {
+import styles from "./CustomerTravelHistory.module.css";
+
+const CustomerTravelHistory = ({location}) => {
   const history = useHistory();
 
   const [travelHistories] = useState([
@@ -12,7 +15,7 @@ const TravelHistory = ({location}) => {
       id: 1,
       date: "06/07/20",
       hour: "15:30:24",
-      conductor: "Pitt Brad",
+      conductor: "Stinson Barney",
       passenger: "Mosby Ted",
       status: "Finalizado",
       actions: {
@@ -24,43 +27,7 @@ const TravelHistory = ({location}) => {
         id: 2,
         date: "03/07/20",
         hour: "09:30:24",
-        conductor: "Specter Harvey",
-        passenger: "Mosby Ted",
-        status: "Finalizado",
-        actions: {
-          text: "Detalles",
-          url: location.pathname,
-        },
-      },
-      {
-        id: 3,
-        date: "03/07/20",
-        hour: "08:20:23",
-        conductor: "Messi Leo",
-        passenger: "Mosby Ted",
-        status: "Finalizado",
-        actions: {
-          text: "Detalles",
-          url: location.pathname,
-        },
-      },
-      {
-        id: 4,
-        date: "03/07/20",
-        hour: "05:45:32",
-        conductor: "Navas Keylor ",
-        passenger: "Mosby Ted",
-        status: "Finalizado",
-        actions: {
-          text: "Detalles",
-          url: location.pathname,
-        },
-      },
-      {
-        id: 5,
-        date: "03/07/20",
-        hour: "11:23:54",
-        conductor: "Ronaldo Cristiano",
+        conductor: "Pitt Brad",
         passenger: "Mosby Ted",
         status: "Finalizado",
         actions: {
@@ -77,11 +44,23 @@ const TravelHistory = ({location}) => {
           className={styles.sectionHeading}
           onClick={() => history.goBack()}
         >
+          <ArrowBackIosIcon
+            style={{ verticalAlign: "middle", color: "#000000" }}
+            fontSize="default"
+          />
           Historial de Viajes
         </span>
       </nav>
       <div className={styles.userInfoContainer}>
+        <div className={styles.userImage}>
+          <img src={user} alt="User" />
+        </div>
         <div className={styles.userInfo}>
+          <div className={styles.userDetails}>
+            <p>Mosby Ted</p>
+            <p>+506 324 345 </p>
+            <p>tedmosby@gmail.com</p>
+          </div>
           <div className={styles.otherDetails}>
             <div className={styles.dateArea}>
               <span>Periodo:</span>{" "}
@@ -155,7 +134,7 @@ const TravelHistory = ({location}) => {
                 <div className={styles.statusBody}>{travelHistory.status}</div>
                 <div className={styles.actionsBody}>
                   <Link
-                    to={travelHistory.actions.url + "/details/" + travelHistory.id}
+                    to={travelHistory.actions.url + "/" + travelHistory.id}
                     className={styles.actionLink}
                   >
                     {travelHistory.actions.text}
@@ -170,4 +149,4 @@ const TravelHistory = ({location}) => {
   );
 };
 
-export default withRouter(TravelHistory);
+export default withRouter(CustomerTravelHistory);
